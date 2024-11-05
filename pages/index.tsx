@@ -1,7 +1,9 @@
+// pages/index.tsx
 import Image from 'next/image';
 import Head from 'next/head';
 import Chatbot from '../components/Chatbot';
 import logo from '../public/stockgpt-logo.png'; // adjust the path if needed
+import styles from './Home.module.css'; // Import the CSS module for styling
 
 const Home = () => {
   return (
@@ -10,37 +12,16 @@ const Home = () => {
         <title>Thoughtforms StockGPT</title>
         <meta name="description" content="Stock trading assistant powered by Thoughtforms StockGPT" />
       </Head>
-      <main
-        style={{
-          display: 'flex',
-          minHeight: '80vh',
-          alignItems: 'center',
-          justifyContent: 'space-between', // Aligns content to left and right
-          padding: '2rem',
-        }}
-      >
+      <main className={styles.main}>
         {/* Left Side: Logo and Text */}
-        <div
-          style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'flex-start', // Aligns to the left side of the screen
-            padding: '2rem',
-          }}
-        >
-          <Image src={logo} alt="Thoughtforms StockGPT Logo" width={200} height={200} />
-          <h1 style={{ fontSize: '2.5rem', marginTop: '1.5rem' }}>
-            Welcome to Thoughtforms StockGPT
-          </h1>
-          <p style={{ fontSize: '1.5rem', color: '#4a5568', marginTop: '1rem' }}>
-            Your intelligent stock trading assistant, here to help you navigate the markets.
-          </p>
+        <div className={styles.leftSection}>
+          <Image src={logo} alt="StockGPT Logo" width={200} height={200} />
+          <h1>Welcome to StockGPT</h1>
+          <p>AI-powered stock trading assistant to help you make better investment decisions.</p>
         </div>
 
         {/* Right Side: Chatbot */}
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+        <div className={styles.rightSection}>
           <Chatbot />
         </div>
       </main>

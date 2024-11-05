@@ -1,0 +1,38 @@
+/* components/Chatbot.module.css */
+.chatbotWrapper {
+    position: fixed;
+    bottom: -50px;
+    right: 1rem;
+    z-index: 9999;
+  }
+  
+  .chatbotIframe {
+    width: 700px; /* Default width for larger screens */
+    height: 80vh;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .chatbotIframe {
+      width: 90vw; /* Full width for tablet screens */
+      height: 70vh; /* Adjust height for better display on tablets */
+      right: 0.5rem;
+      bottom: -20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .chatbotIframe {
+      width: 100vw;  /* Full width for mobile screens */
+      height: 50vh;  /* Half viewport height for mobile */
+      position: relative; /* Remove fixed positioning on small screens */
+      right: 0;
+      bottom: 0;
+      margin-top: 2rem; /* Add spacing on mobile */
+    }
+  }
+  
